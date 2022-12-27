@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familiares</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h3{
+            text-align: center;
+        }
+        span{
+            margin: 0;
+            padding: 0;
+            line-break:normal;
+            color: rgb(78, 0, 0);
+        }
+
+        table{
+            border: black 2px solid;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table tr{
+            text-align: center;
+        }
+        table th{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <h3> Bienvenidos, aqui les presento a mis <span>Familiares</span></h3>
+    </header>
+      <section>
+        <table>
+            <tr>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>Age</th>
+              <th>Have a Dog?</th>
+            </tr>
+            {%for familia in familiares%}
+            <tr>
+              <td>{{familia.name}}</td>
+              <td>{{familia.surname}}</td>
+              <td>{{familia.age}}</td>
+              <td>{{familia.have_a_dog}}</td>
+            </tr>
+            {%endfor%}
+          </table>
+    </section>
+<footer>Obs: para agregar familiares se hace desde la url ej: http://127.0.0.1:8000/create-familia/david/Jose/15/False/</footer>
+</body>
+</html>
